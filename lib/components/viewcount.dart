@@ -1,11 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:providermovie/provider/countprovider.dart';
 
-class CountWidget extends StatelessWidget {
-  const CountWidget({Key key}) : super(key: key);
+
+class VidwCountWidget extends StatelessWidget {
+  const VidwCountWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

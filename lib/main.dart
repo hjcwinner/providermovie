@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:providermovie/provider/countprovider.dart';
+import 'package:providermovie/provider/bottom_provider.dart';
 import 'package:providermovie/src/home.dart';
 
 void main() {
@@ -11,7 +12,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Provider',
@@ -19,8 +19,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: ChangeNotifierProvider(
-        create: (BuildContext context) => CountProvider(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+              create: (BuildContext context) => CountProvider()),
+          ChangeNotifierProvider(
+              create: (BuildContext context) => BottomNavigationProvider()),
+        ],
         child: Home(),
       ),
     );
