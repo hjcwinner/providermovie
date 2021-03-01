@@ -10,5 +10,5 @@ class MovieProvider extends ChangeNotifier{
     List<Movie> listMovies = await _movieRepository.loadMovies();
     _movies = listMovies;
     notifyListeners();
-  }
+  }  
 }

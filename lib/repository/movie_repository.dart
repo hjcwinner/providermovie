@@ -7,7 +7,7 @@ class MovieRepository {
 
   Future<List<Movie>> loadMovies() async {
     var uri =
-        Uri.https("https://api.themoviedb.org", "/3/movie/popular", queryPram);
+        Uri.https("api.themoviedb.org", "/3/movie/popular", queryPram);
 
     var reponse = await http.get(uri);
 
